@@ -1,0 +1,9 @@
+{
+  "dev": {
+    "driver": "pg",
+    "host": {"ENV": "DB_HOST"},
+    "database": "postgres",
+    "role":"postgres",
+    "user":"postgres"
+  }
+}
