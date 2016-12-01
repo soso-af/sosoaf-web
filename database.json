@@ -2,8 +2,8 @@
   "dev": {
     "driver": "pg",
     "host": {"ENV": "DB_HOST"},
-    "database": "postgres",
-    "role":"postgres",
-    "user":"postgres"
+    "database": {"ENV": "DB_NAME"},
+    "role": {"ENV": "DB_ROLE"},
+    "user": {"ENV": "DB_USER"}
   }
 }
