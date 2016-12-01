@@ -4,6 +4,7 @@ var DBMigrate = require('db-migrate');
 var dotenv = require('dotenv');
 
 var home = require('./routes/home');
+
 dotenv.load();
 
 // Run all migrations
@@ -15,10 +16,14 @@ dbmigrate.up( () => {
 // Initialize logger
 app = express();
 app.use(morgan('dev'));
+//
+// Mount routers
+app.use('/', home);
 
 // Start server
-app.listen(3000, function() {
+var server = app.listen(3000, function() {
   console.log('Listening on port 3000...')
 })
 
-app.use('/', home);
+
+module.exports = server;

@@ -7,7 +7,7 @@ router.use(function timeLog (req, res, next) {
 })
 
 router.get('/', function (req, res) {
-  res.send('Home page')
+  res.status(200).send('Home page.');
 })
 
 module.exports = router
