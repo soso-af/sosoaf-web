@@ -2,6 +2,8 @@ var express = require('express');
 var morgan = require('morgan');
 var DBMigrate = require('db-migrate');
 var dotenv = require('dotenv');
+
+var home = require('./routes/home');
 dotenv.load();
 
 // Run all migrations
@@ -18,3 +20,5 @@ app.use(morgan('dev'));
 app.listen(3000, function() {
   console.log('Listening on port 3000...')
 })
+
+app.use('/', home);
