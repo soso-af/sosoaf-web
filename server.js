@@ -1,11 +1,13 @@
 var express = require('express');
 var morgan = require('morgan');
 var DBMigrate = require('db-migrate');
-var dotenv = require('dotenv');
 
 var index = require('./controllers/index');
 
-dotenv.load();
+if (process.env.ENVIRONMENT == "DEV") {
+  var dotenv = require('dotenv');
+  dotenv.load();
+}
 
 // Run all migrations
 var dbmigrate = DBMigrate.getInstance(true);
