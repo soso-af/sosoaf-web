@@ -3,7 +3,7 @@ var morgan = require('morgan');
 var DBMigrate = require('db-migrate');
 var dotenv = require('dotenv');
 
-var home = require('./routes/home');
+var index = require('./controllers/index');
 
 dotenv.load();
 
@@ -16,9 +16,9 @@ dbmigrate.up( () => {
 // Initialize logger
 app = express();
 app.use(morgan('dev'));
-//
+
 // Mount routers
-app.use('/', home);
+app.use('/', index);
 
 // Start server
 var server = app.listen(3000, function() {
